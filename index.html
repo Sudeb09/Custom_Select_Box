@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Slect Box</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div class="container">
+        <div class="selector">
+            <div id="selectField">
+                <p id="selectText">Select Social Media</p>
+                <img src="images/arrow.png" id="arroeIcon">
+            </div>
+
+            <ul id="list" class="hide">
+                <li class="options">
+                    <p><img src="images/facebook.png">Facebook</p>
+                </li>
+                <li class="options">
+                    <p><img src="images/youtube.png">YouTube</p>
+                </li>
+                <li class="options">
+                    <p><img src="images/instagram.png">Instagram</p>
+                </li>
+                <li class="options">
+                    <p><img src="images/twitter.png">Twitter</p>
+                </li>
+                <li class="options">
+                    <p><img src="images/pinterest.png">Pinterest</p>
+                </li>
+                <li class="options">
+                    <p><img src="images/whatsapp.png">Whatsapp</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script>
+        var selectField = document.getElementById("selectField");
+        var selectText = document.getElementById("selectText");
+        var options = document.getElementsByClassName("options");
+        var list = document.getElementById("list");
+        var arroeIcon = document.getElementById("arroeIcon");
+
+        selectField.onclick = function(){
+            list.classList.toggle("hide");
+            arroeIcon.classList.toggle("rotate");
+        }
+
+        for(option of options){
+            option.onclick = function(){
+                selectText.innerHTML = this.textContent;
+                list.classList.toggle("hide");
+                arroeIcon.classList.toggle("rotate")
+            }
+        }
+    </script>
+</body>
+</html>
